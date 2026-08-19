@@ -102,6 +102,21 @@ npm run build
 npm run preview
 ```
 
+## Continuous Integration
+
+This project uses GitHub Actions for continuous integration (CI).
+
+For pull requests targeting `main`, the CI workflow:
+
+1. Checks out the repository
+2. Sets up the Node.js version specified in `.nvmrc`
+3. Installs dependencies with `npm ci`
+4. Builds the production site with `npm run build`
+
+A pull request must pass CI before it is considered ready to merge.
+
+The workflow configuration is located at `.github/workflows/ci.yml`.
+
 ## License
 
 See [LICENSE.txt](LICENSE.txt) for license information.
