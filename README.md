@@ -71,16 +71,24 @@ http://localhost:4321
 
 ```text
 /
-├── public/              # Static assets
+├── public/                 # Static assets
 ├── src/
-│   ├── pages/           # Page components and routes
-│   └── styles/          # Global and custom styles
-├── .nvmrc               # Project Node.js version
-├── astro.config.mjs     # Astro configuration
-├── package.json         # Project metadata and dependencies
-├── package-lock.json    # Locked dependency versions
-├── tsconfig.json        # TypeScript configuration
-└── README.md            # Project documentation
+│   ├── components/         # Reusable Astro components
+│   │   ├── Footer.astro
+│   │   └── Header.astro
+│   ├── layouts/            # Shared page layouts
+│   │   └── BaseLayout.astro
+│   ├── pages/              # Page routes
+│   │   └── index.astro
+│   └── styles/             # Global and custom styles
+│       └── global.css
+├── .gitignore
+├── .nvmrc                  # Node.js version used by the project
+├── astro.config.mjs        # Astro configuration
+├── package.json            # Project metadata and dependencies
+├── package-lock.json       # Locked dependency versions
+├── tsconfig.json           # TypeScript configuration
+└── README.md            	# Project documentation
 ```
 
 ## Development
