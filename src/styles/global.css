@@ -87,3 +87,49 @@ h6 {
 	--bs-btn-hover-bg: #526454;
 	--bs-btn-hover-border-color: #526454;
 }
+
+/*
+ * Header
+ */
+
+.site-header {
+	background-color: var(--color-surface);
+	border-bottom: 1px solid rgba(41, 41, 41, 0.1);
+}
+
+.site-brand {
+	color: var(--color-primary);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+.site-brand:hover {
+	color: var(--color-primary-dark);
+}
+
+.site-header .nav-link {
+	color: var(--color-text);
+	font-weight: 500;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus {
+	color: var(--color-primary);
+}
+
+.site-header .nav-link.active {
+	color: var(--color-primary);
+	font-weight: 600;
+}
+
+.site-header .navbar-toggler {
+	border-color: rgba(41, 41, 41, 0.2);
+}
+
+.site-header .navbar-toggler:focus {
+	box-shadow: 0 0 0 0.2rem rgba(122, 38, 58, 0.2);
+}
+
+.site-header .navbar-toggler-icon {
+	background-image: var(--bs-navbar-toggler-icon-bg);
+}
