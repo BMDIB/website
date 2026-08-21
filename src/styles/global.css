@@ -265,3 +265,78 @@ h6 {
 	margin-left: auto;
 	color: var(--color-text-muted);
 }
+
+/*
+ * Board page
+ */
+
+.board-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.board-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.board-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.board-members {
+	padding: 3rem 0 5rem;
+	background-color: var(--color-surface);
+}
+
+.board-member-card {
+	height: 100%;
+	overflow: hidden;
+	background-color: var(--color-surface);
+	border: 1px solid rgba(41, 41, 41, 0.1);
+	border-radius: 0.5rem;
+	box-shadow: 0 0.125rem 0.5rem rgba(41, 41, 41, 0.06);
+}
+
+.board-member-image {
+	aspect-ratio: 1 / 1;
+	background-color: var(--color-background);
+}
+
+.board-member-image img,
+.board-member-image-placeholder {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.board-member-image img {
+	object-fit: cover;
+}
+
+.board-member-image-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-secondary);
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.board-member-content {
+	padding: 1.5rem;
+}
+
+.board-member-content h2 {
+	margin-bottom: 0.25rem;
+	font-size: 1.25rem;
+	color: var(--color-primary-dark);
+}
+
+.board-member-role {
+	margin-bottom: 1rem;
+	color: var(--color-secondary);
+	font-weight: 600;
+}

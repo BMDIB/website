@@ -1,0 +1,28 @@
+---
+interface Props {
+	name: string;
+	role: string;
+	image?: string | null;
+	bio: string;
+}
+
+const { name, role, image, bio } = Astro.props;
+---
+
+<article class="board-member-card">
+	<div class="board-member-image">
+		{image ? (
+			<img src={image} alt={`Headshot of ${name}`} loading="lazy" />
+		) : (
+			<div class="board-member-image-placeholder" aria-hidden="true">
+				<span>Headshot</span>
+			</div>
+		)}
+	</div>
+
+	<div class="board-member-content">
+		<h2>{name}</h2>
+		<p class="board-member-role">{role}</p>
+		<p>{bio}</p>
+	</div>
+</article>
