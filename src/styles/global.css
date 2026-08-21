@@ -91,6 +91,17 @@ h6 {
 	--bs-btn-hover-border-color: #526454;
 }
 
+.btn-outline-secondary {
+	--bs-btn-color: var(--color-secondary);
+	--bs-btn-border-color: var(--color-secondary);
+	--bs-btn-hover-color: var(--color-surface);
+	--bs-btn-hover-bg: var(--color-secondary);
+	--bs-btn-hover-border-color: var(--color-secondary);
+	--bs-btn-active-color: var(--color-surface);
+	--bs-btn-active-bg: var(--color-secondary);
+	--bs-btn-active-border-color: var(--color-secondary);
+}
+
 /*
  * Header
  */
@@ -191,4 +202,66 @@ h6 {
 	.footer-nav {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
+}
+
+/*
+ * Homepage
+ */
+
+.home-hero {
+	background-color: var(--color-background);
+}
+
+.home-hero-eyebrow,
+.section-eyebrow {
+	margin-bottom: 0.75rem;
+	color: var(--color-primary);
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.home-hero h1 {
+	max-width: 48rem;
+	color: var(--color-primary-dark);
+}
+
+.home-hero .lead {
+	max-width: 42rem;
+	margin-top: 1.5rem;
+}
+
+.home-section {
+	background-color: var(--color-surface);
+}
+
+.home-section-alt {
+	background-color: var(--color-background);
+}
+
+.home-section h2,
+.home-cta h2 {
+	margin-bottom: 1rem;
+}
+
+.home-cta {
+	background-color: var(--color-surface);
+	border-top: 1px solid rgba(41, 41, 41, 0.08);
+}
+
+.home-cta h2 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.home-cta .section-eyebrow {
+	color: var(--color-secondary);
+}
+
+.home-cta p {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+	color: var(--color-text-muted);
 }
