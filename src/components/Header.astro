@@ -32,23 +32,27 @@ const currentPath = Astro.url.pathname;
 
 			<div class="collapse navbar-collapse" id="site-navigation">
 				<ul class="navbar-nav ms-auto">
-					{
-						navItems.map((item) => (
+				{
+					navItems.map((item) => {
+						const isActive = currentPath === item.href;
+
+						return (
 							<li class="nav-item">
 								<a
 									class:list={[
 										"nav-link",
-										{ active: currentPath === item.href },
+										{ active: isActive },
 									]}
 									href={item.href}
-									aria-current={currentPath === item.href ? "page" : undefined}
+									aria-current={isActive ? "page" : undefined}
 								>
 									{item.label}
 								</a>
 							</li>
-						))
-					}
-				</ul>
+						);
+					})
+				}
+			</ul>
 			</div>
 		</div>
 	</nav>

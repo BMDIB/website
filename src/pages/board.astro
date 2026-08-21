@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BoardMemberCard from "../components/BoardMemberCard.astro";
+
+const boardMembers = [
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+		{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+];
+---
+
+<BaseLayout
+	title="The Board | Mandarin Boosters"
+	description="Meet the board members of Mandarin Boosters."
+>
+	<section class="board-intro">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<p class="section-eyebrow">The Board</p>
+
+					<h1>Meet the Board</h1>
+
+					<p class="lead">
+						Placeholder introduction to the BMDIB board. Final content will be
+						provided by the organization.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="board-members">
+		<div class="container">
+			<div class="row g-4">
+				{
+					boardMembers.map((member) => (
+						<div class="col-md-6 col-lg-4">
+							<BoardMemberCard {...member} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</BaseLayout>
