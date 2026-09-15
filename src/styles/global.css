@@ -340,3 +340,80 @@ h6 {
 	color: var(--color-secondary);
 	font-weight: 600;
 }
+
+/*
+ * Events page
+ */
+
+.events-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.events-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.events-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.events-upcoming,
+.events-past {
+	padding: 3rem 0 5rem;
+}
+
+.events-upcoming {
+	background-color: var(--color-surface);
+}
+
+.events-past {
+	background-color: var(--color-background);
+}
+
+.events-upcoming h2,
+.events-past h2 {
+	margin-bottom: 2rem;
+	color: var(--color-primary-dark);
+}
+
+.event-card {
+	height: 100%;
+	background-color: var(--color-surface);
+	border: 1px solid rgba(41, 41, 41, 0.1);
+	border-radius: 0.5rem;
+	box-shadow: 0 0.125rem 0.5rem rgba(41, 41, 41, 0.06);
+}
+
+.event-card-content {
+	padding: 1.5rem;
+}
+
+.event-card-date {
+	margin-bottom: 0.5rem;
+	color: var(--color-primary);
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.event-card-content h2 {
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem;
+	color: var(--color-primary-dark);
+}
+
+.event-card-location {
+	margin-bottom: 1rem;
+	color: var(--color-secondary);
+	font-weight: 600;
+}
+
+.event-card-content > p:last-child {
+	margin-bottom: 0;
+	color: var(--color-text-muted);
+}
