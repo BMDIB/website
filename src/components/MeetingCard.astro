@@ -1,0 +1,28 @@
+---
+interface Props {
+	title: string;
+	date: string;
+	location?: string;
+	agenda?: string;
+	slides?: string;
+	minutes?: string;
+}
+
+const { title, date, location, agenda, slides, minutes } = Astro.props;
+---
+
+<article class="meeting-card">
+	<div class="meeting-card-content">
+		<p class="meeting-card-date">{date}</p>
+
+		<h2>{title}</h2>
+
+		{location && <p class="meeting-card-location">{location}</p>}
+
+		<div class="meeting-card-materials">
+			{agenda && <a href={agenda}>Agenda</a>}
+			{slides && <a href={slides}>Slides</a>}
+			{minutes && <a href={minutes}>Minutes</a>}
+		</div>
+	</div>
+</article>

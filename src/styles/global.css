@@ -494,3 +494,96 @@ h6 {
 	margin-bottom: 0;
 	color: var(--color-text-muted);
 }
+
+/*
+ * General Meetings page
+ */
+
+.meetings-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.meetings-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.meetings-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.meetings-upcoming,
+.meetings-past {
+	padding: 3rem 0 5rem;
+}
+
+.meetings-upcoming {
+	background-color: var(--color-surface);
+}
+
+.meetings-past {
+	background-color: var(--color-background);
+}
+
+.meetings-upcoming h2,
+.meetings-past h2 {
+	margin-bottom: 2rem;
+	color: var(--color-primary-dark);
+}
+
+.meeting-card {
+	height: 100%;
+	background-color: var(--color-surface);
+	border: 1px solid rgba(41, 41, 41, 0.1);
+	border-radius: 0.5rem;
+	box-shadow: 0 0.125rem 0.5rem rgba(41, 41, 41, 0.06);
+}
+
+.meeting-card-content {
+	padding: 1.5rem;
+}
+
+.meeting-card-date {
+	margin-bottom: 0.5rem;
+	color: var(--color-primary);
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.meeting-card-content h2 {
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem;
+	color: var(--color-primary-dark);
+}
+
+.meeting-card-location {
+	margin-bottom: 1rem;
+	color: var(--color-secondary);
+	font-weight: 600;
+}
+
+.meeting-card-materials {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1rem;
+	margin-top: 1.25rem;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(41, 41, 41, 0.1);
+}
+
+.meeting-card-materials a {
+	color: var(--color-primary);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.meeting-card-materials a:hover,
+.meeting-card-materials a:focus {
+	color: var(--color-primary-dark);
+	text-decoration: underline;
+}
