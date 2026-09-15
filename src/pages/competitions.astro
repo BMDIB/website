@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CompetitionCard from "../components/CompetitionCard.astro";
+
+const upcomingCompetitions = [
+	{
+		title: "Mandarin Competition",
+		date: "Date TBD",
+		location: "Location TBD",
+		description:
+			"Placeholder description for an upcoming Mandarin competition.",
+	},
+	{
+		title: "Chinese Language Competition",
+		date: "Date TBD",
+		location: "Location TBD",
+		description:
+			"Placeholder description for an upcoming Chinese language competition.",
+	},
+];
+
+const pastCompetitions = [
+	{
+		title: "Mandarin Competition",
+		date: "Past Date",
+		location: "Location TBD",
+		description:
+			"Placeholder description for a past Mandarin competition.",
+	},
+	{
+		title: "Chinese Language Competition",
+		date: "Past Date",
+		location: "Location TBD",
+		description:
+			"Placeholder description for a past Chinese language competition.",
+	},
+];
+---
+
+<BaseLayout
+	title="Competitions | Mandarin Boosters"
+	description="Upcoming and past competitions supported by Mandarin Boosters."
+>
+	<section class="competitions-intro">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<p class="section-eyebrow">Competitions</p>
+
+					<h1>Competitions</h1>
+
+					<p class="lead">
+						Placeholder introduction to BMDIB competitions. Final content will
+						be provided by the organization.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="competitions-upcoming">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Current &amp; Upcoming Competitions</h2>
+				</div>
+			</div>
+
+			<div class="row g-4">
+				{
+					upcomingCompetitions.map((competition) => (
+						<div class="col-md-6 col-lg-4">
+							<CompetitionCard {...competition} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="competitions-past">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Past Competitions</h2>
+				</div>
+			</div>
+
+			<div class="row g-4">
+				{
+					pastCompetitions.map((competition) => (
+						<div class="col-md-6 col-lg-4">
+							<CompetitionCard {...competition} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</BaseLayout>

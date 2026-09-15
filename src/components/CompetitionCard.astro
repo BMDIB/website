@@ -1,0 +1,22 @@
+---
+interface Props {
+	title: string;
+	date: string;
+	description: string;
+	location?: string;
+}
+
+const { title, date, description, location } = Astro.props;
+---
+
+<article class="competition-card">
+	<div class="competition-card-content">
+		<p class="competition-card-date">{date}</p>
+
+		<h2>{title}</h2>
+
+		{location && <p class="competition-card-location">{location}</p>}
+
+		<p>{description}</p>
+	</div>
+</article>

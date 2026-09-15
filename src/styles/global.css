@@ -417,3 +417,80 @@ h6 {
 	margin-bottom: 0;
 	color: var(--color-text-muted);
 }
+
+/*
+ * Competitions page
+ */
+
+.competitions-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.competitions-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.competitions-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.competitions-upcoming,
+.competitions-past {
+	padding: 3rem 0 5rem;
+}
+
+.competitions-upcoming {
+	background-color: var(--color-surface);
+}
+
+.competitions-past {
+	background-color: var(--color-background);
+}
+
+.competitions-upcoming h2,
+.competitions-past h2 {
+	margin-bottom: 2rem;
+	color: var(--color-primary-dark);
+}
+
+.competition-card {
+	height: 100%;
+	background-color: var(--color-surface);
+	border: 1px solid rgba(41, 41, 41, 0.1);
+	border-radius: 0.5rem;
+	box-shadow: 0 0.125rem 0.5rem rgba(41, 41, 41, 0.06);
+}
+
+.competition-card-content {
+	padding: 1.5rem;
+}
+
+.competition-card-date {
+	margin-bottom: 0.5rem;
+	color: var(--color-primary);
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.competition-card-content h2 {
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem;
+	color: var(--color-primary-dark);
+}
+
+.competition-card-location {
+	margin-bottom: 1rem;
+	color: var(--color-secondary);
+	font-weight: 600;
+}
+
+.competition-card-content > p:last-child {
+	margin-bottom: 0;
+	color: var(--color-text-muted);
+}
