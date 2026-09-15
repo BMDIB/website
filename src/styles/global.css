@@ -587,3 +587,53 @@ h6 {
 	color: var(--color-primary-dark);
 	text-decoration: underline;
 }
+
+/*
+ * Fundraising page
+ */
+
+.fundraising-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.fundraising-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.fundraising-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.fundraising-why,
+.fundraising-campaign {
+	padding: 4rem 0;
+}
+
+.fundraising-why {
+	background-color: var(--color-surface);
+}
+
+.fundraising-campaign {
+	background-color: var(--color-background);
+}
+
+.fundraising-why h2,
+.fundraising-campaign h2 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.fundraising-why p {
+	max-width: 48rem;
+}
+
+.fundraising-campaign p {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 1.5rem;
+}
