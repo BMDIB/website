@@ -637,3 +637,70 @@ h6 {
 	margin-left: auto;
 	margin-bottom: 1.5rem;
 }
+
+/*
+ * Resources page
+ */
+
+.resources-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.resources-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.resources-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.resources-content {
+	padding: 4rem 0 5rem;
+	background-color: var(--color-surface);
+}
+
+.resource-category {
+	margin-bottom: 3.5rem;
+}
+
+.resource-category:last-child {
+	margin-bottom: 0;
+}
+
+.resource-category h2 {
+	margin-bottom: 1.25rem;
+	color: var(--color-primary-dark);
+}
+
+.resource-list {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.resource-list li {
+	margin-bottom: 1.25rem;
+	padding-left: 0.25rem;
+}
+
+.resource-list li:last-child {
+	margin-bottom: 0;
+}
+
+.resource-list a {
+	color: var(--color-primary);
+	font-weight: 600;
+}
+
+.resource-list a:hover,
+.resource-list a:focus {
+	color: var(--color-primary-dark);
+}
+
+.resource-list p {
+	margin: 0.25rem 0 0;
+	color: var(--color-text-muted);
+}
