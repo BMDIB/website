@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const resourceCategories = [
+	{
+		title: "Mandarin Learning",
+		resources: [
+			{
+				title: "Mandarin Learning Resource",
+				description:
+					"Placeholder description for a Mandarin learning resource.",
+				href: "#",
+			},
+			{
+				title: "Mandarin Practice Resource",
+				description:
+					"Placeholder description for a resource that supports Mandarin practice.",
+				href: "#",
+			},
+		],
+	},
+	{
+		title: "Family Resources",
+		resources: [
+			{
+				title: "Family Resource",
+				description:
+					"Placeholder description for a resource useful to BMDIB families.",
+				href: "#",
+			},
+			{
+				title: "Parent Resource",
+				description:
+					"Placeholder description for a resource for parents and caregivers.",
+				href: "#",
+			},
+		],
+	},
+	{
+		title: "School & District Information",
+		resources: [
+			{
+				title: "School Information",
+				description:
+					"Placeholder description for school-related information.",
+				href: "#",
+			},
+			{
+				title: "District Information",
+				description:
+					"Placeholder description for district-related information.",
+				href: "#",
+			},
+		],
+	},
+	{
+		title: "Community Resources",
+		resources: [
+			{
+				title: "Community Resource",
+				description:
+					"Placeholder description for a community resource.",
+				href: "#",
+			},
+			{
+				title: "Local Resource",
+				description:
+					"Placeholder description for a local resource.",
+				href: "#",
+			},
+		],
+	},
+];
+---
+
+<BaseLayout
+	title="Resources | Mandarin Boosters"
+	description="Resources for BMDIB families, students, educators, and the community."
+>
+	<section class="resources-intro">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<p class="section-eyebrow">Resources</p>
+
+					<h1>Resources</h1>
+
+					<p class="lead">
+						Placeholder introduction to resources for BMDIB families,
+						students, educators, and the broader community.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="resources-content">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					{
+						resourceCategories.map((category) => (
+							<section class="resource-category">
+								<h2>{category.title}</h2>
+
+								<ul class="resource-list">
+									{
+										category.resources.map((resource) => (
+											<li>
+												<a
+													href={resource.href}
+													target="_blank"
+													rel="noopener noreferrer"
+												>
+													{resource.title}
+												</a>
+
+												<p>{resource.description}</p>
+											</li>
+										))
+									}
+								</ul>
+							</section>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>
