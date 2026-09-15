@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import MeetingCard from "../components/MeetingCard.astro";
+
+const upcomingMeetings = [
+	{
+		title: "BMDIB General Meeting",
+		date: "Date TBD",
+		location: "Location TBD",
+		agenda: "#",
+	},
+	{
+		title: "BMDIB General Meeting",
+		date: "Date TBD",
+		location: "Location TBD",
+		agenda: "#",
+	},
+];
+
+const pastMeetings = [
+	{
+		title: "BMDIB General Meeting",
+		date: "Past Date",
+		location: "Location TBD",
+		agenda: "#",
+		slides: "#",
+		minutes: "#",
+	},
+	{
+		title: "BMDIB General Meeting",
+		date: "Past Date",
+		location: "Location TBD",
+		agenda: "#",
+		slides: "#",
+		minutes: "#",
+	},
+];
+---
+
+<BaseLayout
+	title="General Meetings | Mandarin Boosters"
+	description="Upcoming and past general meetings of Mandarin Boosters."
+>
+	<section class="meetings-intro">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<p class="section-eyebrow">General Meetings</p>
+
+					<h1>General Meetings</h1>
+
+					<p class="lead">
+						Placeholder introduction to BMDIB general meetings. Final content
+						will be provided by the organization.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="meetings-upcoming">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Upcoming Meetings</h2>
+				</div>
+			</div>
+
+			<div class="row g-4">
+				{
+					upcomingMeetings.map((meeting) => (
+						<div class="col-md-6 col-lg-4">
+							<MeetingCard {...meeting} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="meetings-past">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Past Meetings</h2>
+				</div>
+			</div>
+
+			<div class="row g-4">
+				{
+					pastMeetings.map((meeting) => (
+						<div class="col-md-6 col-lg-4">
+							<MeetingCard {...meeting} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</BaseLayout>
