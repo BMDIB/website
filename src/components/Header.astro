@@ -10,7 +10,9 @@ const navItems = [
 	{ label: "Contact", href: "/contact" },
 ];
 
-const currentPath = Astro.url.pathname;
+// Helper function to remove trailing slashes for strict matching
+const normalizePath = (path: string) => path.replace(/\/$/, "") || "/";
+const currentPath = normalizePath(Astro.url.pathname);
 ---
 
 <header class="site-header">
