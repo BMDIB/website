@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EventCard from "../components/EventCard.astro";
+
+const upcomingEvents = [
+	{
+		title: "BMDIB Community Event",
+		date: "Date TBD",
+		location: "Location TBD",
+		description:
+			"Placeholder description for an upcoming BMDIB community event.",
+	},
+	{
+		title: "Mandarin Cultural Event",
+		date: "Date TBD",
+		location: "Location TBD",
+		description:
+			"Placeholder description for an upcoming Mandarin cultural event.",
+	},
+];
+
+const pastEvents = [
+	{
+		title: "BMDIB Community Event",
+		date: "Past Date",
+		location: "Location TBD",
+		description:
+			"Placeholder description for a past BMDIB community event.",
+	},
+	{
+		title: "Mandarin Cultural Event",
+		date: "Past Date",
+		location: "Location TBD",
+		description:
+			"Placeholder description for a past Mandarin cultural event.",
+	},
+];
+---
+
+<BaseLayout
+	title="Events | Mandarin Boosters"
+	description="Upcoming and past events from Mandarin Boosters."
+>
+	<section class="events-intro">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<p class="section-eyebrow">Events</p>
+
+					<h1>Events</h1>
+
+					<p class="lead">
+						Placeholder introduction to BMDIB events. Final content will be
+						provided by the organization.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="events-upcoming">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Current &amp; Upcoming Events</h2>
+				</div>
+			</div>
+
+			<div class="row g-4">
+				{
+					upcomingEvents.map((event) => (
+						<div class="col-md-6 col-lg-4">
+							<EventCard {...event} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="events-past">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Past Events</h2>
+				</div>
+			</div>
+
+			<div class="row g-4">
+				{
+					pastEvents.map((event) => (
+						<div class="col-md-6 col-lg-4">
+							<EventCard {...event} />
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+</BaseLayout>
