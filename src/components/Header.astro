@@ -17,7 +17,13 @@ const currentPath = normalizePath(Astro.url.pathname);
 <header class="site-header">
 	<nav class="navbar navbar-expand-lg">
 		<div class="container">
-			<a class="navbar-brand site-brand" href="/">BMDIB</a>
+			<a class="navbar-brand site-brand" href="/">
+				<img
+					src="/images/bmdib-logo.png"
+					alt="Berryessa Mandarin Dual Immersion Boosters"
+					class="site-logo"
+				/>
+			</a>
 
 			<button
 				class="navbar-toggler"
@@ -33,28 +39,49 @@ const currentPath = normalizePath(Astro.url.pathname);
 
 			<div class="collapse navbar-collapse" id="site-navigation">
 				<ul class="navbar-nav ms-auto">
-				{
-					navItems.map((item) => {
-						const isActive = currentPath === item.href;
+					{
+						navItems.map((item) => {
+							const isActive = currentPath === item.href;
 
-						return (
-							<li class="nav-item">
-								<a
-									class:list={[
-										"nav-link",
-										{ active: isActive },
-									]}
-									href={item.href}
-									aria-current={isActive ? "page" : undefined}
-								>
-									{item.label}
-								</a>
-							</li>
-						);
-					})
-				}
-			</ul>
+							return (
+								<li class="nav-item">
+									<a
+										class:list={[
+											"nav-link",
+											{ active: isActive },
+										]}
+										href={item.href}
+										aria-current={isActive ? "page" : undefined}
+									>
+										{item.label}
+									</a>
+								</li>
+							);
+						})
+					}
+				</ul>
 			</div>
 		</div>
 	</nav>
 </header>
+
+<style>
+	.site-logo {
+		height: 80px;
+		width: 80px;
+		object-fit: contain;
+		display: block;
+	}
+
+	.site-brand {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	@media (max-width: 991.98px) {
+		.site-logo {
+			height: 64px;
+			width: 64px;
+		}
+	}
+</style>
