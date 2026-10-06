@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
 import BoardMemberCard from "../components/BoardMemberCard.astro";
 
 const boardMembers = [
@@ -64,22 +65,11 @@ const boardMembers = [
 	title="The Board | Mandarin Boosters"
 	description="Meet the board members of Mandarin Boosters."
 >
-	<section class="board-intro">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<p class="section-eyebrow">The Board</p>
-
-					<h1>Meet the Board</h1>
-
-					<p class="lead">
-						Placeholder introduction to the BMDIB board. Final content will be
-						provided by the organization.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+	<PageHeader
+		eyebrow="The Board"
+		title="Meet the Board"
+		description="Placeholder introduction to the BMDIB board. Final content will be provided by the organization."
+	/>
 
 	<section class="board-members">
 		<div class="container">

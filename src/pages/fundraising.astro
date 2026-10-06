@@ -1,27 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
 ---
 
 <BaseLayout
 	title="Fundraising | Mandarin Boosters"
 	description="Learn why Mandarin Boosters fundraises and find the current fundraising campaign."
 >
-	<section class="fundraising-intro">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<p class="section-eyebrow">Fundraising</p>
-
-					<h1>Support Mandarin Boosters</h1>
-
-					<p class="lead">
-						Placeholder introduction to BMDIB fundraising. Final content will
-						be provided by the organization.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+	<PageHeader
+		eyebrow="Fundraising"
+		title="Support Mandarin Boosters"
+		description="Placeholder introduction to BMDIB fundraising. Final content will be provided by the organization."
+	/>
 
 	<section class="fundraising-why">
 		<div class="container">

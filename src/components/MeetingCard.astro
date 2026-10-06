@@ -19,10 +19,14 @@ const { title, date, location, agenda, slides, minutes } = Astro.props;
 
 		{location && <p class="meeting-card-location">{location}</p>}
 
-		<div class="meeting-card-materials">
-			{agenda && <a href={agenda}>Agenda</a>}
-			{slides && <a href={slides}>Slides</a>}
-			{minutes && <a href={minutes}>Minutes</a>}
-		</div>
+		{
+			(agenda || slides || minutes) && (
+				<div class="meeting-card-materials">
+					{agenda && <a href={agenda}>Agenda</a>}
+					{slides && <a href={slides}>Slides</a>}
+					{minutes && <a href={minutes}>Minutes</a>}
+				</div>
+			)
+		}
 	</div>
 </article>

@@ -205,6 +205,26 @@ h6 {
 }
 
 /*
+ * PageHeader
+ */
+
+.page-header {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.page-header h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.page-header .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*
  * Homepage
  */
 
@@ -270,22 +290,6 @@ h6 {
  * Board page
  */
 
-.board-intro {
-	padding: 4rem 0 3rem;
-	background-color: var(--color-background);
-}
-
-.board-intro h1 {
-	margin-bottom: 1rem;
-	color: var(--color-primary-dark);
-}
-
-.board-intro .lead {
-	max-width: 42rem;
-	margin-right: auto;
-	margin-left: auto;
-}
-
 .board-members {
 	padding: 3rem 0 5rem;
 	background-color: var(--color-surface);
@@ -344,22 +348,6 @@ h6 {
 /*
  * Events page
  */
-
-.events-intro {
-	padding: 4rem 0 3rem;
-	background-color: var(--color-background);
-}
-
-.events-intro h1 {
-	margin-bottom: 1rem;
-	color: var(--color-primary-dark);
-}
-
-.events-intro .lead {
-	max-width: 42rem;
-	margin-right: auto;
-	margin-left: auto;
-}
 
 .events-upcoming,
 .events-past {
@@ -422,22 +410,6 @@ h6 {
  * Competitions page
  */
 
-.competitions-intro {
-	padding: 4rem 0 3rem;
-	background-color: var(--color-background);
-}
-
-.competitions-intro h1 {
-	margin-bottom: 1rem;
-	color: var(--color-primary-dark);
-}
-
-.competitions-intro .lead {
-	max-width: 42rem;
-	margin-right: auto;
-	margin-left: auto;
-}
-
 .competitions-upcoming,
 .competitions-past {
 	padding: 3rem 0 5rem;
@@ -498,22 +470,6 @@ h6 {
 /*
  * General Meetings page
  */
-
-.meetings-intro {
-	padding: 4rem 0 3rem;
-	background-color: var(--color-background);
-}
-
-.meetings-intro h1 {
-	margin-bottom: 1rem;
-	color: var(--color-primary-dark);
-}
-
-.meetings-intro .lead {
-	max-width: 42rem;
-	margin-right: auto;
-	margin-left: auto;
-}
 
 .meetings-upcoming,
 .meetings-past {
@@ -592,22 +548,6 @@ h6 {
  * Fundraising page
  */
 
-.fundraising-intro {
-	padding: 4rem 0 3rem;
-	background-color: var(--color-background);
-}
-
-.fundraising-intro h1 {
-	margin-bottom: 1rem;
-	color: var(--color-primary-dark);
-}
-
-.fundraising-intro .lead {
-	max-width: 42rem;
-	margin-right: auto;
-	margin-left: auto;
-}
-
 .fundraising-why,
 .fundraising-campaign {
 	padding: 4rem 0;
@@ -641,22 +581,6 @@ h6 {
 /*
  * Resources page
  */
-
-.resources-intro {
-	padding: 4rem 0 3rem;
-	background-color: var(--color-background);
-}
-
-.resources-intro h1 {
-	margin-bottom: 1rem;
-	color: var(--color-primary-dark);
-}
-
-.resources-intro .lead {
-	max-width: 42rem;
-	margin-right: auto;
-	margin-left: auto;
-}
 
 .resources-content {
 	padding: 4rem 0 5rem;
