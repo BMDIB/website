@@ -1,41 +1,61 @@
 ---
+import { getCollection, render } from "astro:content";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHeader from "../components/PageHeader.astro";
 import EventCard from "../components/EventCard.astro";
+import PageHeader from "../components/PageHeader.astro";
 
-const upcomingEvents = [
-	{
-		title: "BMDIB Community Event",
-		date: "Date TBD",
-		location: "Location TBD",
-		description:
-			"Placeholder description for an upcoming BMDIB community event.",
-	},
-	{
-		title: "Mandarin Cultural Event",
-		date: "Date TBD",
-		location: "Location TBD",
-		description:
-			"Placeholder description for an upcoming Mandarin cultural event.",
-	},
-];
+// Loads all the Markdown event entries
+const events = await getCollection("events");
 
-const pastEvents = [
-	{
-		title: "BMDIB Community Event",
-		date: "Past Date",
-		location: "Location TBD",
-		description:
-			"Placeholder description for a past BMDIB community event.",
-	},
-	{
-		title: "Mandarin Cultural Event",
-		date: "Past Date",
-		location: "Location TBD",
-		description:
-			"Placeholder description for a past Mandarin cultural event.",
-	},
-];
+// Determine today's calendar date in BMDIB's local Pacific timezone.
+// Using YYYY-MM-DD allows reliable string comparison with event dates.
+const today = new Date().toLocaleDateString("en-CA", {
+	timeZone: "America/Los_Angeles",
+});
+
+// Current and upcoming events are sorted from earliest to latest.
+// If multiple events occur on the same date, sort them by time.
+const upcomingEvents = events
+	.filter((event) => event.data.date >= today)
+	.sort((a, b) => {
+		const dateComparison = a.data.date.localeCompare(b.data.date);
+
+		if (dateComparison !== 0) {
+			return dateComparison;
+		}
+
+		return a.data.time.localeCompare(b.data.time);
+	});
+
+// Past events are sorted from most recent to oldest.
+// If multiple events occurred on the same date, show the later one first.
+const pastEvents = events
+	.filter((event) => event.data.date < today)
+	.sort((a, b) => {
+		const dateComparison = b.data.date.localeCompare(a.data.date);
+
+		if (dateComparison !== 0) {
+			return dateComparison;
+		}
+
+		return b.data.time.localeCompare(a.data.time);
+	});
+
+// Render the Markdown body for each event before generating the page markup.
+const renderedUpcomingEvents = await Promise.all(
+	upcomingEvents.map(async (event) => ({
+		event,
+		Content: (await render(event)).Content,
+	}))
+);
+
+const renderedPastEvents = await Promise.all(
+	pastEvents.map(async (event) => ({
+		event,
+		Content: (await render(event)).Content,
+	}))
+);
 ---
 
 <BaseLayout
@@ -58,9 +78,16 @@ const pastEvents = [
 
 			<div class="row g-4">
 				{
-					upcomingEvents.map((event) => (
+					renderedUpcomingEvents.map(({ event, Content }) => (
 						<div class="col-md-6 col-lg-4">
-							<EventCard {...event} />
+							<EventCard
+								title={event.data.title}
+								date={event.data.date}
+								time={event.data.time}
+								location={event.data.location}
+							>
+								<Content />
+							</EventCard>
 						</div>
 					))
 				}
@@ -78,9 +105,16 @@ const pastEvents = [
 
 			<div class="row g-4">
 				{
-					pastEvents.map((event) => (
+					renderedPastEvents.map(({ event, Content }) => (
 						<div class="col-md-6 col-lg-4">
-							<EventCard {...event} />
+							<EventCard
+								title={event.data.title}
+								date={event.data.date}
+								time={event.data.time}
+								location={event.data.location}
+							>
+								<Content />
+							</EventCard>
 						</div>
 					))
 				}
