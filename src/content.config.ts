@@ -27,7 +27,24 @@ const competitions = defineCollection({
 	}),
 });
 
+const meetings = defineCollection({
+	loader: glob({
+		pattern: "**/*.md",
+		base: "./src/data/meetings",
+	}),
+	schema: z.object({
+		title: z.string(),
+		date: z.string(),
+		time: z.string(),
+		location: z.string().optional(),
+		agenda: z.string().optional(),
+		slides: z.string().optional(),
+		minutes: z.string().optional(),
+	}),
+});
+
 export const collections = {
 	events,
 	competitions,
+	meetings,
 };
