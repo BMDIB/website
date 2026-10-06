@@ -43,8 +43,22 @@ const meetings = defineCollection({
 	}),
 });
 
+const board = defineCollection({
+	loader: glob({
+		pattern: "**/*.md",
+		base: "./src/data/board",
+	}),
+	schema: z.object({
+		name: z.string(),
+		role: z.string(),
+		image: z.string().optional(),
+		order: z.number(),
+	}),
+});
+
 export const collections = {
 	events,
 	competitions,
 	meetings,
+	board,
 };
