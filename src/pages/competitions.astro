@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import { getPacificToday } from "../utils/dateTime";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CompetitionCard from "../components/CompetitionCard.astro";
@@ -7,9 +8,7 @@ import PageHeader from "../components/PageHeader.astro";
 
 const competitions = await getCollection("competitions");
 
-const today = new Date().toLocaleDateString("en-CA", {
-	timeZone: "America/Los_Angeles",
-});
+const today = getPacificToday();
 
 const upcomingCompetitions = competitions
 	.filter((competition) => competition.data.date >= today)

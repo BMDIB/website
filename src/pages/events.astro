@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import { getPacificToday } from "../utils/dateTime";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EventCard from "../components/EventCard.astro";
@@ -10,9 +11,7 @@ const events = await getCollection("events");
 
 // Determine today's calendar date in BMDIB's local Pacific timezone.
 // Using YYYY-MM-DD allows reliable string comparison with event dates.
-const today = new Date().toLocaleDateString("en-CA", {
-	timeZone: "America/Los_Angeles",
-});
+const today = getPacificToday();
 
 // Current and upcoming events are sorted from earliest to latest.
 // If multiple events occur on the same date, sort them by time.
