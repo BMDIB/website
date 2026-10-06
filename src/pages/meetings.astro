@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
 import MeetingCard from "../components/MeetingCard.astro";
 
 const upcomingMeetings = [
@@ -41,22 +42,11 @@ const pastMeetings = [
 	title="General Meetings | Mandarin Boosters"
 	description="Upcoming and past general meetings of Mandarin Boosters."
 >
-	<section class="meetings-intro">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<p class="section-eyebrow">General Meetings</p>
-
-					<h1>General Meetings</h1>
-
-					<p class="lead">
-						Placeholder introduction to BMDIB general meetings. Final content
-						will be provided by the organization.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+	<PageHeader
+		eyebrow="General Meetings"
+		title="General Meetings"
+		description="Placeholder introduction to BMDIB general meetings. Final content will be provided by the organization."
+	/>
 
 	<section class="meetings-upcoming">
 		<div class="container">
