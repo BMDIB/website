@@ -100,12 +100,13 @@ const renderedPastCompetitions = await Promise.all(
 				{
 					renderedPastCompetitions.map(
 						({ competition, Content }) => (
-							<div class="col-md-6 col-lg-4">
+							<div class="col-md-6">
 								<CompetitionCard
 									title={competition.data.title}
 									date={competition.data.date}
 									time={competition.data.time}
 									location={competition.data.location}
+									images={competition.data.images}
 								>
 									<Content />
 								</CompetitionCard>

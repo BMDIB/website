@@ -1,20 +1,89 @@
 ---
 import { formatDate, formatTime } from "../utils/dateTime";
 
+interface Image {
+	src: string;
+	alt: string;
+}
+
 interface Props {
 	title: string;
 	date: string;
 	time: string;
 	location?: string;
+	images?: Image[];
 }
 
-const { title, date, time, location } = Astro.props;
+const { title, date, time, location, images = [] } = Astro.props;
 
 const formattedDate = formatDate(date);
 const formattedTime = formatTime(time);
+
+const carouselId = `event-carousel-${date}-${title}`
+	.toLowerCase()
+	.replace(/[^a-z0-9]+/g, "-")
+	.replace(/^-|-$/g, "");
 ---
 
 <article class="event-card">
+	{
+		images.length === 1 && (
+			<img
+				src={images[0].src}
+				alt={images[0].alt}
+				class="event-card-image"
+			/>
+		)
+	}
+
+	{
+		images.length > 1 && (
+			<div id={carouselId} class="carousel slide">
+				<div class="carousel-inner">
+					{images.map((image, index) => (
+						<div
+							class:list={[
+								"carousel-item",
+								{ active: index === 0 },
+							]}
+						>
+							<img
+								src={image.src}
+								alt={image.alt}
+								class="d-block w-100 event-card-image"
+							/>
+						</div>
+					))}
+				</div>
+
+				<button
+					class="carousel-control-prev"
+					type="button"
+					data-bs-target={`#${carouselId}`}
+					data-bs-slide="prev"
+				>
+					<span
+						class="carousel-control-prev-icon"
+						aria-hidden="true"
+					></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+
+				<button
+					class="carousel-control-next"
+					type="button"
+					data-bs-target={`#${carouselId}`}
+					data-bs-slide="next"
+				>
+					<span
+						class="carousel-control-next-icon"
+						aria-hidden="true"
+					></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		)
+	}
 	<div class="event-card-content">
 		<p class="event-card-date">
 			<time datetime={`${date}T${time}`}>
