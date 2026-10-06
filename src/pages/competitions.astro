@@ -1,41 +1,53 @@
 ---
+import { getCollection, render } from "astro:content";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PageHeader from "../components/PageHeader.astro";
 import CompetitionCard from "../components/CompetitionCard.astro";
+import PageHeader from "../components/PageHeader.astro";
 
-const upcomingCompetitions = [
-	{
-		title: "Mandarin Competition",
-		date: "Date TBD",
-		location: "Location TBD",
-		description:
-			"Placeholder description for an upcoming Mandarin competition.",
-	},
-	{
-		title: "Chinese Language Competition",
-		date: "Date TBD",
-		location: "Location TBD",
-		description:
-			"Placeholder description for an upcoming Chinese language competition.",
-	},
-];
+const competitions = await getCollection("competitions");
 
-const pastCompetitions = [
-	{
-		title: "Mandarin Competition",
-		date: "Past Date",
-		location: "Location TBD",
-		description:
-			"Placeholder description for a past Mandarin competition.",
-	},
-	{
-		title: "Chinese Language Competition",
-		date: "Past Date",
-		location: "Location TBD",
-		description:
-			"Placeholder description for a past Chinese language competition.",
-	},
-];
+const today = new Date().toLocaleDateString("en-CA", {
+	timeZone: "America/Los_Angeles",
+});
+
+const upcomingCompetitions = competitions
+	.filter((competition) => competition.data.date >= today)
+	.sort((a, b) => {
+		const dateComparison = a.data.date.localeCompare(b.data.date);
+
+		if (dateComparison !== 0) {
+			return dateComparison;
+		}
+
+		return a.data.time.localeCompare(b.data.time);
+	});
+
+const pastCompetitions = competitions
+	.filter((competition) => competition.data.date < today)
+	.sort((a, b) => {
+		const dateComparison = b.data.date.localeCompare(a.data.date);
+
+		if (dateComparison !== 0) {
+			return dateComparison;
+		}
+
+		return b.data.time.localeCompare(a.data.time);
+	});
+
+const renderedUpcomingCompetitions = await Promise.all(
+	upcomingCompetitions.map(async (competition) => ({
+		competition,
+		Content: (await render(competition)).Content,
+	}))
+);
+
+const renderedPastCompetitions = await Promise.all(
+	pastCompetitions.map(async (competition) => ({
+		competition,
+		Content: (await render(competition)).Content,
+	}))
+);
 ---
 
 <BaseLayout
@@ -58,11 +70,20 @@ const pastCompetitions = [
 
 			<div class="row g-4">
 				{
-					upcomingCompetitions.map((competition) => (
-						<div class="col-md-6 col-lg-4">
-							<CompetitionCard {...competition} />
-						</div>
-					))
+					renderedUpcomingCompetitions.map(
+						({ competition, Content }) => (
+							<div class="col-md-6 col-lg-4">
+								<CompetitionCard
+									title={competition.data.title}
+									date={competition.data.date}
+									time={competition.data.time}
+									location={competition.data.location}
+								>
+									<Content />
+								</CompetitionCard>
+							</div>
+						)
+					)
 				}
 			</div>
 		</div>
@@ -78,11 +99,20 @@ const pastCompetitions = [
 
 			<div class="row g-4">
 				{
-					pastCompetitions.map((competition) => (
-						<div class="col-md-6 col-lg-4">
-							<CompetitionCard {...competition} />
-						</div>
-					))
+					renderedPastCompetitions.map(
+						({ competition, Content }) => (
+							<div class="col-md-6 col-lg-4">
+								<CompetitionCard
+									title={competition.data.title}
+									date={competition.data.date}
+									time={competition.data.time}
+									location={competition.data.location}
+								>
+									<Content />
+								</CompetitionCard>
+							</div>
+						)
+					)
 				}
 			</div>
 		</div>
