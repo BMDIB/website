@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import { getPacificToday } from "../utils/dateTime";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MeetingCard from "../components/MeetingCard.astro";
@@ -7,9 +8,7 @@ import PageHeader from "../components/PageHeader.astro";
 
 const meetings = await getCollection("meetings");
 
-const today = new Date().toLocaleDateString("en-CA", {
-	timeZone: "America/Los_Angeles",
-});
+const today = getPacificToday();
 
 const upcomingMeetings = meetings
 	.filter((meeting) => meeting.data.date >= today)

@@ -1,4 +1,6 @@
 ---
+import { formatDate, formatTime } from "../utils/dateTime";
+
 interface Props {
 	title: string;
 	date: string;
@@ -8,23 +10,8 @@ interface Props {
 
 const { title, date, time, location } = Astro.props;
 
-const [year, month, day] = date.split("-").map(Number);
-const [hour, minute] = time.split(":").map(Number);
-
-const formattedDate = new Intl.DateTimeFormat("en-US", {
-	weekday: "short",
-	year: "numeric",
-	month: "long",
-	day: "numeric",
-	timeZone: "UTC",
-}).format(new Date(Date.UTC(year, month - 1, day)));
-
-const formattedTime = new Intl.DateTimeFormat("en-US", {
-	hour: "numeric",
-	minute: "2-digit",
-	hour12: true,
-	timeZone: "UTC",
-}).format(new Date(Date.UTC(2000, 0, 1, hour, minute)));
+const formattedDate = formatDate(date);
+const formattedTime = formatTime(time);
 ---
 
 <article class="competition-card">
