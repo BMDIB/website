@@ -11,6 +11,12 @@ const events = defineCollection({
 		date: z.string(),
 		time: z.string(),
 		location: z.string().optional(),
+		images: z.array(
+			z.object({
+				src: z.string(),
+				alt: z.string(),
+			})
+		).optional(),
 	}),
 });
 
@@ -24,6 +30,12 @@ const competitions = defineCollection({
 		date: z.string(),
 		time: z.string(),
 		location: z.string().optional(),
+		images: z.array(
+			z.object({
+				src: z.string(),
+				alt: z.string(),
+			})
+		).optional(),
 	}),
 });
 

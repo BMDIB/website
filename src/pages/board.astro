@@ -34,7 +34,7 @@ const renderedBoardMembers = await Promise.all(
 			<div class="row g-4">
 				{
 					renderedBoardMembers.map(({ member, Content }) => (
-						<div class="col-md-6 col-lg-4">
+						<div class="col-md-6">
 							<BoardMemberCard
 								name={member.data.name}
 								role={member.data.role}

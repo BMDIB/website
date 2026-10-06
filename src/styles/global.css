@@ -406,6 +406,34 @@ h6 {
 	color: var(--color-text-muted);
 }
 
+.event-card {
+	overflow: hidden;
+}
+
+.event-card-image {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	display: block;
+}
+
+.event-card .carousel {
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+}
+
+.event-card .carousel-inner,
+.event-card .carousel-item {
+	width: 100%;
+	height: 100%;
+}
+
+.event-card .carousel-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 /*
  * Competitions page
  */
@@ -465,6 +493,34 @@ h6 {
 .competition-card-content > p:last-child {
 	margin-bottom: 0;
 	color: var(--color-text-muted);
+}
+
+.competition-card {
+	overflow: hidden;
+}
+
+.competition-card-image {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	display: block;
+}
+
+.competition-card .carousel {
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+}
+
+.competition-card .carousel-inner,
+.competition-card .carousel-item {
+	width: 100%;
+	height: 100%;
+}
+
+.competition-card .carousel-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 /*

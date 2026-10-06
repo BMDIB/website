@@ -105,12 +105,13 @@ const renderedPastEvents = await Promise.all(
 			<div class="row g-4">
 				{
 					renderedPastEvents.map(({ event, Content }) => (
-						<div class="col-md-6 col-lg-4">
+						<div class="col-md-6">
 							<EventCard
 								title={event.data.title}
 								date={event.data.date}
 								time={event.data.time}
 								location={event.data.location}
+								images={event.data.images}
 							>
 								<Content />
 							</EventCard>
