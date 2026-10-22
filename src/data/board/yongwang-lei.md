@@ -1,7 +1,7 @@
 ---
-name: "Board Member Two"
+name: "Yongwang Lei"
 role: "Co-VP of Fundraising"
-image: ""
+image: "/images/board/yongwang-lei.jpg"
 order: 2
 ---
 
