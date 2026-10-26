@@ -37,7 +37,7 @@ const formattedTime = formatTime(time);
 			(agenda || slides || minutes) && (
 				<div class="meeting-card-materials">
 					{agenda && <a href={agenda}>Agenda</a>}
-					{slides && <a href={slides}>Slides</a>}
+					{slides && <a href={slides} target="_blank">Slides</a>}
 					{minutes && <a href={minutes}>Minutes</a>}
 				</div>
 			)
