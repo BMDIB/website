@@ -205,26 +205,6 @@ h6 {
 }
 
 /*
- * PageHeader
- */
-
-.page-header {
-	padding: 4rem 0 3rem;
-	background-color: var(--color-background);
-}
-
-.page-header h1 {
-	margin-bottom: 1rem;
-	color: var(--color-primary-dark);
-}
-
-.page-header .lead {
-	max-width: 42rem;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-/*
  * Homepage
  */
 
@@ -290,6 +270,22 @@ h6 {
  * Board page
  */
 
+.board-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.board-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.board-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .board-members {
 	padding: 3rem 0 5rem;
 	background-color: var(--color-surface);
@@ -349,6 +345,22 @@ h6 {
  * Events page
  */
 
+.events-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.events-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.events-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .events-upcoming,
 .events-past {
 	padding: 3rem 0 5rem;
@@ -406,65 +418,102 @@ h6 {
 	color: var(--color-text-muted);
 }
 
-.event-card {
-	overflow: hidden;
-}
-
-.event-card-image {
-	width: 100%;
-	aspect-ratio: 16 / 9;
-	object-fit: cover;
-	display: block;
-}
-
-.event-card .carousel {
-	aspect-ratio: 16 / 9;
-	overflow: hidden;
-}
-
-.event-card .carousel-inner,
-.event-card .carousel-item {
-	width: 100%;
-	height: 100%;
-}
-
-.event-card .carousel-item img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
 /*
  * Competitions page
  */
 
-.competition-article {
-	max-width: 800px;
+.competitions-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
 }
 
-.competition-article p {
-	line-height: 1.8;
+.competitions-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
 }
 
-.competition-gallery figure {
-	margin-bottom: 2.5rem;
+.competitions-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.competition-photo {
-	display: block;
-	width: 100%;
-	height: auto;
+.competitions-upcoming,
+.competitions-past {
+	padding: 3rem 0 5rem;
 }
 
-.competition-gallery figcaption {
-	font-size: 0.9rem;
-	line-height: 1.5;
-	text-align: center;
+.competitions-upcoming {
+	background-color: var(--color-surface);
+}
+
+.competitions-past {
+	background-color: var(--color-background);
+}
+
+.competitions-upcoming h2,
+.competitions-past h2 {
+	margin-bottom: 2rem;
+	color: var(--color-primary-dark);
+}
+
+.competition-card {
+	height: 100%;
+	background-color: var(--color-surface);
+	border: 1px solid rgba(41, 41, 41, 0.1);
+	border-radius: 0.5rem;
+	box-shadow: 0 0.125rem 0.5rem rgba(41, 41, 41, 0.06);
+}
+
+.competition-card-content {
+	padding: 1.5rem;
+}
+
+.competition-card-date {
+	margin-bottom: 0.5rem;
+	color: var(--color-primary);
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.competition-card-content h2 {
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem;
+	color: var(--color-primary-dark);
+}
+
+.competition-card-location {
+	margin-bottom: 1rem;
+	color: var(--color-secondary);
+	font-weight: 600;
+}
+
+.competition-card-content > p:last-child {
+	margin-bottom: 0;
+	color: var(--color-text-muted);
 }
 
 /*
  * General Meetings page
  */
+
+.meetings-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.meetings-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.meetings-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
 
 .meetings-upcoming,
 .meetings-past {
@@ -543,6 +592,22 @@ h6 {
  * Fundraising page
  */
 
+.fundraising-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.fundraising-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.fundraising-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .fundraising-why,
 .fundraising-campaign {
 	padding: 4rem 0;
@@ -576,6 +641,22 @@ h6 {
 /*
  * Resources page
  */
+
+.resources-intro {
+	padding: 4rem 0 3rem;
+	background-color: var(--color-background);
+}
+
+.resources-intro h1 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+}
+
+.resources-intro .lead {
+	max-width: 42rem;
+	margin-right: auto;
+	margin-left: auto;
+}
 
 .resources-content {
 	padding: 4rem 0 5rem;
