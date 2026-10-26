@@ -9,7 +9,7 @@ interface Image {
 interface Props {
 	title: string;
 	date: string;
-	time: string;
+	time?: string;
 	location?: string;
 	images?: Image[];
 }
@@ -17,7 +17,7 @@ interface Props {
 const { title, date, time, location, images = [] } = Astro.props;
 
 const formattedDate = formatDate(date);
-const formattedTime = formatTime(time);
+const formattedTime = time ? formatTime(time) : null;
 
 const carouselId = `event-carousel-${date}-${title}`
 	.toLowerCase()
@@ -86,8 +86,8 @@ const carouselId = `event-carousel-${date}-${title}`
 	}
 	<div class="event-card-content">
 		<p class="event-card-date">
-			<time datetime={`${date}T${time}`}>
-				{formattedDate} · {formattedTime}
+			<time datetime={time ? `${date}T${time}` : date}>
+				{formattedDate}{formattedTime && ` · ${formattedTime}`}
 			</time>
 		</p>
 

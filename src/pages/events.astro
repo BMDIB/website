@@ -24,7 +24,7 @@ const upcomingEvents = events
 			return dateComparison;
 		}
 
-		return a.data.time.localeCompare(b.data.time);
+		return (a.data.time ?? "").localeCompare(b.data.time ?? "");
 	});
 
 // Past events are sorted from most recent to oldest.

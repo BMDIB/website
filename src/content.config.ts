@@ -9,7 +9,7 @@ const events = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		date: z.string(),
-		time: z.string(),
+		time: z.string().optional(),
 		location: z.string().optional(),
 		images: z.array(
 			z.object({
