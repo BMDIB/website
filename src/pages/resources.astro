@@ -4,70 +4,47 @@ import PageHeader from "../components/PageHeader.astro";
 
 const resourceCategories = [
 	{
-		title: "Mandarin Learning",
+		title: "School & District Resources",
 		resources: [
 			{
-				title: "Mandarin Learning Resource",
+				title: "BUSD Volunteer Information",
 				description:
-					"Placeholder description for a Mandarin learning resource.",
-				href: "#",
+					"Information and requirements for volunteering at schools in the Berryessa Union School District.",
+				href: "https://sites.google.com/busd.net/busdvolunteer/home",
 			},
 			{
-				title: "Mandarin Practice Resource",
+				title: "Ruskin PTA",
 				description:
-					"Placeholder description for a resource that supports Mandarin practice.",
-				href: "#",
+					"Visit the Ruskin PTA website for information about parent involvement, school activities, and community events.",
+				href: "https://sites.google.com/ruskinpta.org/ruskinpta/home",
+			},
+			{
+				title: "Sierramont PTSA",
+				description:
+					"Visit the Sierramont PTSA website for information about parent involvement, school activities, and community events.",
+				href: "https://sites.google.com/view/smsptsa/home",
 			},
 		],
 	},
 	{
-		title: "Family Resources",
+		title: "BMDIB Resources",
 		resources: [
 			{
-				title: "Family Resource",
+				title: "Volunteer Reimbursement Form",
 				description:
-					"Placeholder description for a resource useful to BMDIB families.",
-				href: "#",
-			},
-			{
-				title: "Parent Resource",
-				description:
-					"Placeholder description for a resource for parents and caregivers.",
-				href: "#",
+					"Use this form to request reimbursement for preapproved BMDIB volunteer expenses. Only preapproved expenses are eligible for reimbursement.",
+				href: "https://docs.google.com/document/d/1fxix9lCU33gePAxdKC0iZbul2V9Oy6WEf0v0C5R4eOI/edit?usp=sharing",
 			},
 		],
 	},
 	{
-		title: "School & District Information",
+		title: "Mandarin Education & Community",
 		resources: [
 			{
-				title: "School Information",
+				title: "Association of Northern California Chinese Schools (ANCCS)",
 				description:
-					"Placeholder description for school-related information.",
-				href: "#",
-			},
-			{
-				title: "District Information",
-				description:
-					"Placeholder description for district-related information.",
-				href: "#",
-			},
-		],
-	},
-	{
-		title: "Community Resources",
-		resources: [
-			{
-				title: "Community Resource",
-				description:
-					"Placeholder description for a community resource.",
-				href: "#",
-			},
-			{
-				title: "Local Resource",
-				description:
-					"Placeholder description for a local resource.",
-				href: "#",
+					"Learn more about ANCCS, which organizes educational activities and competitions for Chinese language learners in Northern California.",
+				href: "https://www.anccs.org/",
 			},
 		],
 	},
@@ -76,12 +53,12 @@ const resourceCategories = [
 
 <BaseLayout
 	title="Resources | Mandarin Boosters"
-	description="Resources for BMDIB families, students, educators, and the community."
+	description="Helpful resources for BMDIB families, volunteers, students, and the Mandarin Dual Immersion community."
 >
 	<PageHeader
-		eyebrow="Resources"
+		eyebrow="Helpful Information"
 		title="Resources"
-		description="Placeholder introduction to resources for BMDIB families, students, educators, and the broader community."
+		description="Explore useful links for families, volunteers, and our Mandarin Dual Immersion community."
 	/>
 
 	<section class="resources-content">
@@ -94,21 +71,19 @@ const resourceCategories = [
 								<h2>{category.title}</h2>
 
 								<ul class="resource-list">
-									{
-										category.resources.map((resource) => (
-											<li>
-												<a
-													href={resource.href}
-													target="_blank"
-													rel="noopener noreferrer"
-												>
-													{resource.title}
-												</a>
+									{category.resources.map((resource) => (
+										<li>
+											<a
+												href={resource.href}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{resource.title}
+											</a>
 
-												<p>{resource.description}</p>
-											</li>
-										))
-									}
+											<p>{resource.description}</p>
+										</li>
+									))}
 								</ul>
 							</section>
 						))
@@ -118,3 +93,5 @@ const resourceCategories = [
 		</div>
 	</section>
 </BaseLayout>
+
+
