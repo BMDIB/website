@@ -2,27 +2,27 @@
 interface Props {
 	name: string;
 	role: string;
-	image?: string | null;
-	bio: string;
+	image?: string;
 }
 
-const { name, role, image, bio } = Astro.props;
+const { name, role, image } = Astro.props;
 ---
 
 <article class="board-member-card">
-	<div class="board-member-image">
-		{image ? (
-			<img src={image} alt={`Headshot of ${name}`} loading="lazy" />
-		) : (
-			<div class="board-member-image-placeholder" aria-hidden="true">
-				<span>Headshot</span>
+	{
+		image && (
+			<div class="board-member-image">
+				<img src={image} alt={`Portrait of ${name}`} />
 			</div>
-		)}
-	</div>
+		)
+	}
 
 	<div class="board-member-content">
 		<h2>{name}</h2>
 		<p class="board-member-role">{role}</p>
-		<p>{bio}</p>
+
+		<div class="board-member-bio">
+			<slot />
+		</div>
 	</div>
 </article>

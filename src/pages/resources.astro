@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
 
 const resourceCategories = [
 	{
@@ -77,22 +78,11 @@ const resourceCategories = [
 	title="Resources | Mandarin Boosters"
 	description="Resources for BMDIB families, students, educators, and the community."
 >
-	<section class="resources-intro">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<p class="section-eyebrow">Resources</p>
-
-					<h1>Resources</h1>
-
-					<p class="lead">
-						Placeholder introduction to resources for BMDIB families,
-						students, educators, and the broader community.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+	<PageHeader
+		eyebrow="Resources"
+		title="Resources"
+		description="Placeholder introduction to resources for BMDIB families, students, educators, and the broader community."
+	/>
 
 	<section class="resources-content">
 		<div class="container">

@@ -1,76 +1,87 @@
 ---
+import { getCollection, render } from "astro:content";
+import { getPacificToday } from "../utils/dateTime";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import MeetingCard from "../components/MeetingCard.astro";
+import PageHeader from "../components/PageHeader.astro";
 
-const upcomingMeetings = [
-	{
-		title: "BMDIB General Meeting",
-		date: "Date TBD",
-		location: "Location TBD",
-		agenda: "#",
-	},
-	{
-		title: "BMDIB General Meeting",
-		date: "Date TBD",
-		location: "Location TBD",
-		agenda: "#",
-	},
-];
+const meetings = await getCollection("meetings");
 
-const pastMeetings = [
-	{
-		title: "BMDIB General Meeting",
-		date: "Past Date",
-		location: "Location TBD",
-		agenda: "#",
-		slides: "#",
-		minutes: "#",
-	},
-	{
-		title: "BMDIB General Meeting",
-		date: "Past Date",
-		location: "Location TBD",
-		agenda: "#",
-		slides: "#",
-		minutes: "#",
-	},
-];
+const today = getPacificToday();
+
+const upcomingMeetings = meetings
+	.filter((meeting) => meeting.data.date >= today)
+	.sort((a, b) => {
+		const dateComparison = a.data.date.localeCompare(b.data.date);
+
+		if (dateComparison !== 0) {
+			return dateComparison;
+		}
+
+		return a.data.time.localeCompare(b.data.time);
+	});
+
+const pastMeetings = meetings
+	.filter((meeting) => meeting.data.date < today)
+	.sort((a, b) => {
+		const dateComparison = b.data.date.localeCompare(a.data.date);
+
+		if (dateComparison !== 0) {
+			return dateComparison;
+		}
+
+		return b.data.time.localeCompare(a.data.time);
+	});
+
+const renderedUpcomingMeetings = await Promise.all(
+	upcomingMeetings.map(async (meeting) => ({
+		meeting,
+		Content: (await render(meeting)).Content,
+	}))
+);
+
+const renderedPastMeetings = await Promise.all(
+	pastMeetings.map(async (meeting) => ({
+		meeting,
+		Content: (await render(meeting)).Content,
+	}))
+);
 ---
 
 <BaseLayout
 	title="General Meetings | Mandarin Boosters"
-	description="Upcoming and past general meetings of Mandarin Boosters."
+	description="Upcoming and past general meetings from Mandarin Boosters."
 >
-	<section class="meetings-intro">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<p class="section-eyebrow">General Meetings</p>
-
-					<h1>General Meetings</h1>
-
-					<p class="lead">
-						Placeholder introduction to BMDIB general meetings. Final content
-						will be provided by the organization.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
+	<PageHeader
+		eyebrow="General Meetings"
+		title="General Meetings"
+		description="Placeholder introduction to BMDIB general meetings. Final content will be provided by the organization."
+	/>
 
 	<section class="meetings-upcoming">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<h2>Upcoming Meetings</h2>
+					<h2>Current &amp; Upcoming Meetings</h2>
 				</div>
 			</div>
 
 			<div class="row g-4">
 				{
-					upcomingMeetings.map((meeting) => (
+					renderedUpcomingMeetings.map(({ meeting, Content }) => (
 						<div class="col-md-6 col-lg-4">
-							<MeetingCard {...meeting} />
+							<MeetingCard
+								title={meeting.data.title}
+								date={meeting.data.date}
+								time={meeting.data.time}
+								location={meeting.data.location}
+								agenda={meeting.data.agenda}
+								slides={meeting.data.slides}
+								minutes={meeting.data.minutes}
+							>
+								<Content />
+							</MeetingCard>
 						</div>
 					))
 				}
@@ -88,9 +99,19 @@ const pastMeetings = [
 
 			<div class="row g-4">
 				{
-					pastMeetings.map((meeting) => (
+					renderedPastMeetings.map(({ meeting, Content }) => (
 						<div class="col-md-6 col-lg-4">
-							<MeetingCard {...meeting} />
+							<MeetingCard
+								title={meeting.data.title}
+								date={meeting.data.date}
+								time={meeting.data.time}
+								location={meeting.data.location}
+								agenda={meeting.data.agenda}
+								slides={meeting.data.slides}
+								minutes={meeting.data.minutes}
+							>
+								<Content />
+							</MeetingCard>
 						</div>
 					))
 				}
