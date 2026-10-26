@@ -438,89 +438,28 @@ h6 {
  * Competitions page
  */
 
-.competitions-upcoming,
-.competitions-past {
-	padding: 3rem 0 5rem;
+.competition-article {
+	max-width: 800px;
 }
 
-.competitions-upcoming {
-	background-color: var(--color-surface);
+.competition-article p {
+	line-height: 1.8;
 }
 
-.competitions-past {
-	background-color: var(--color-background);
+.competition-gallery figure {
+	margin-bottom: 2.5rem;
 }
 
-.competitions-upcoming h2,
-.competitions-past h2 {
-	margin-bottom: 2rem;
-	color: var(--color-primary-dark);
-}
-
-.competition-card {
-	height: 100%;
-	background-color: var(--color-surface);
-	border: 1px solid rgba(41, 41, 41, 0.1);
-	border-radius: 0.5rem;
-	box-shadow: 0 0.125rem 0.5rem rgba(41, 41, 41, 0.06);
-}
-
-.competition-card-content {
-	padding: 1.5rem;
-}
-
-.competition-card-date {
-	margin-bottom: 0.5rem;
-	color: var(--color-primary);
-	font-size: 0.875rem;
-	font-weight: 700;
-	letter-spacing: 0.04em;
-	text-transform: uppercase;
-}
-
-.competition-card-content h2 {
-	margin-bottom: 0.5rem;
-	font-size: 1.25rem;
-	color: var(--color-primary-dark);
-}
-
-.competition-card-location {
-	margin-bottom: 1rem;
-	color: var(--color-secondary);
-	font-weight: 600;
-}
-
-.competition-card-content > p:last-child {
-	margin-bottom: 0;
-	color: var(--color-text-muted);
-}
-
-.competition-card {
-	overflow: hidden;
-}
-
-.competition-card-image {
-	width: 100%;
-	aspect-ratio: 16 / 9;
-	object-fit: cover;
+.competition-photo {
 	display: block;
-}
-
-.competition-card .carousel {
-	aspect-ratio: 16 / 9;
-	overflow: hidden;
-}
-
-.competition-card .carousel-inner,
-.competition-card .carousel-item {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
-.competition-card .carousel-item img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.competition-gallery figcaption {
+	font-size: 0.9rem;
+	line-height: 1.5;
+	text-align: center;
 }
 
 /*

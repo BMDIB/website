@@ -59,62 +59,61 @@ const renderedPastCompetitions = await Promise.all(
 		description="Placeholder introduction to BMDIB competitions. Final content will be provided by the organization."
 	/>
 
-	<section class="competitions-upcoming">
+	<section class="py-5">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h2>Current &amp; Upcoming Competitions</h2>
+			<article class="competition-article mx-auto">
+				<h2 class="mb-4">BMDIB Competition Program</h2>
+
+				<p>
+					A message from our VP of Academic Programs:
+				</p>
+
+				<p>
+					BMDIB works closely with the district to promote our dual
+					language immersion programs by organizing and supporting key
+					events throughout the school year. One of our proudest
+					traditions is hosting the district-wide internal competition,
+					which features Pinyin typing, speech, calligraphy, and writing
+					for students from both Ruskin Elementary and Sierramont Middle
+					School. Winners from our internal competition will go on to
+					represent the Berryessa Union School District (BUSD) at the
+					statewide competition hosted by the Association of Northern
+					California Chinese Schools (ANCCS).
+				</p>
+
+				<div class="competition-gallery mt-5">
+					{
+						[
+							{
+								src: "/images/competitions/photo-1.jpg",
+								alt: "Competition photo 1",
+								caption: "Photo caption coming soon.",
+							},
+							{
+								src: "/images/competitions/photo-2.jpg",
+								alt: "Competition photo 2",
+								caption: "Photo caption coming soon.",
+							},
+							{
+								src: "/images/competitions/photo-3.jpg",
+								alt: "Competition photo 3",
+								caption: "Photo caption coming soon.",
+							},
+						].map((photo) => (
+							<figure class="mb-5">
+								<img
+									src={photo.src}
+									alt={photo.alt}
+									class="img-fluid rounded competition-photo"
+								/>
+								<figcaption class="text-muted mt-2">
+									{photo.caption}
+								</figcaption>
+							</figure>
+						))
+					}
 				</div>
-			</div>
-
-			<div class="row g-4">
-				{
-					renderedUpcomingCompetitions.map(
-						({ competition, Content }) => (
-							<div class="col-md-6 col-lg-4">
-								<CompetitionCard
-									title={competition.data.title}
-									date={competition.data.date}
-									time={competition.data.time}
-									location={competition.data.location}
-								>
-									<Content />
-								</CompetitionCard>
-							</div>
-						)
-					)
-				}
-			</div>
-		</div>
-	</section>
-
-	<section class="competitions-past">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h2>Past Competitions</h2>
-				</div>
-			</div>
-
-			<div class="row g-4">
-				{
-					renderedPastCompetitions.map(
-						({ competition, Content }) => (
-							<div class="col-md-6">
-								<CompetitionCard
-									title={competition.data.title}
-									date={competition.data.date}
-									time={competition.data.time}
-									location={competition.data.location}
-									images={competition.data.images}
-								>
-									<Content />
-								</CompetitionCard>
-							</div>
-						)
-					)
-				}
-			</div>
+			</article>
 		</div>
 	</section>
 </BaseLayout>
