@@ -543,34 +543,32 @@ h6 {
  * Fundraising page
  */
 
-.fundraising-why,
-.fundraising-campaign {
-	padding: 4rem 0;
-}
-
-.fundraising-why {
+.fundraising-section {
 	background-color: var(--color-surface);
 }
 
-.fundraising-campaign {
-	background-color: var(--color-background);
+.fundraising-content {
+	max-width: 900px;
 }
 
-.fundraising-why h2,
-.fundraising-campaign h2 {
+.fundraising-benefits {
+	padding-left: 1.5rem;
+}
+
+.fundraising-benefits li {
 	margin-bottom: 1rem;
-	color: var(--color-primary-dark);
+	line-height: 1.7;
 }
 
-.fundraising-why p {
-	max-width: 48rem;
+.fundraising-infographics {
+	max-width: 750px;
+	margin: 0 auto;
 }
 
-.fundraising-campaign p {
-	max-width: 42rem;
-	margin-right: auto;
-	margin-left: auto;
-	margin-bottom: 1.5rem;
+.fundraising-infographics img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 /*
