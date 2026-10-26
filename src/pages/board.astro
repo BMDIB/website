@@ -1,47 +1,93 @@
 ---
-import { getCollection, render } from "astro:content";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BoardMemberCard from "../components/BoardMemberCard.astro";
-import PageHeader from "../components/PageHeader.astro";
 
-const boardMembers = await getCollection("board");
-
-const sortedBoardMembers = boardMembers.sort(
-	(a, b) => a.data.order - b.data.order
-);
-
-const renderedBoardMembers = await Promise.all(
-	sortedBoardMembers.map(async (member) => ({
-		member,
-		Content: (await render(member)).Content,
-	}))
-);
+const boardMembers = [
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+		{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+	{
+		name: "Board Member Name",
+		role: "Board Role",
+		image: null,
+		bio: "Placeholder self-introduction. Final content will be provided by the board.",
+	},
+];
 ---
 
 <BaseLayout
 	title="The Board | Mandarin Boosters"
 	description="Meet the board members of Mandarin Boosters."
 >
-	<PageHeader
-		eyebrow="The Board"
-		title="Meet the Board"
-		description="Placeholder introduction to the BMDIB board. Final content will be provided by the organization."
-	/>
+	<section class="board-intro">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+					<p class="section-eyebrow">The Board</p>
+
+					<h1>Meet the Board</h1>
+
+					<p class="lead">
+						Placeholder introduction to the BMDIB board. Final content will be
+						provided by the organization.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<section class="board-members">
 		<div class="container">
 			<div class="row g-4">
 				{
-					renderedBoardMembers.map(({ member, Content }) => (
+					boardMembers.map((member) => (
 						<div class="col-md-6 col-lg-4">
-							<BoardMemberCard
-								name={member.data.name}
-								role={member.data.role}
-								image={member.data.image}
-							>
-								<Content />
-							</BoardMemberCard>
+							<BoardMemberCard {...member} />
 						</div>
 					))
 				}
