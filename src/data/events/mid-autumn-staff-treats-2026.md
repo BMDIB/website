@@ -7,8 +7,4 @@ images:
     alt: "Alt1"
 ---
 
-Our wonderful volunteers prepared delicious dim sum treats—including dumplings, buns, and mooncakes—for Ruskin staff in celebration of the Mid-Autumn Festival.
-
-It was a wonderful way to show our appreciation for the teachers and staff before Fall Break.
-
-Thank you to everyone who helped prepare and share these special treats!
+Our wonderful volunteers prepared some yummy dim sum treats, including dumplings, buns and mooncakes, for Ruskin staff in celebration of Mid-Autumn Festival before we headed off to Fall Break. 
