@@ -17,4 +17,4 @@ It was great to see familiar faces at our first family night event at Ruskin thi
 
 BMDIB hosted a booth with information about our organization and flyers promoting our giving campaign, while sharing treats and snacks.
 
-Thank you to everyone who stopped by to say hello!
+Thank you to everyone who stopped by to say hi!

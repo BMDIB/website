@@ -16,3 +16,5 @@ More than 200 lanterns were submitted by students from Ruskin and Sierramont, fi
 Congratulations to the winners in each age group, who received a $10 Tastea gift card!
 
 Thank you to all the students and families who participated and helped make this celebration so special.
+
+Check out the winning works and some amazing pictures here!
