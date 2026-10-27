@@ -450,6 +450,10 @@ h6 {
  * Competitions page
  */
 
+.competition-section {
+	background-color: var(--color-surface);
+}
+
 .competition-article {
 	max-width: 800px;
 }
