@@ -74,3 +74,12 @@ export const collections = {
 	meetings,
 	board,
 };
+
+export const announcement = {
+	enabled: true,
+	title: "🧧 Help Plan Our Lunar New Year Family Night on Feb 26!",
+	message:
+		"We need parent volunteers to help coordinate performances, activities and food booths.",
+	linkText: "Contact emily@bmdib.org  → ",
+	linkUrl: "mailto:emily@bmdib.org ",
+};
