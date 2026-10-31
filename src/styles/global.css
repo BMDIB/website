@@ -148,6 +148,11 @@ h6 {
 	background-image: var(--bs-navbar-toggler-icon-bg);
 }
 
+.site-header .navbar {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
 /*
  * Footer
  */
@@ -587,6 +592,79 @@ h6 {
 	height: auto;
 }
 
+/* Donation methods */
+.donation-card {
+	height: 100%;
+	padding: 1.5rem;
+	background-color: var(--color-background);
+	border: 1px solid rgba(41, 41, 41, 0.1);
+	border-radius: 0.5rem;
+}
+
+.donation-card h4 {
+	margin-bottom: 1rem;
+	color: var(--color-primary-dark);
+	font-size: 1.2rem;
+}
+
+.donation-card a {
+	color: var(--color-primary);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	overflow-wrap: anywhere;
+}
+
+.donation-card a:hover {
+	color: var(--color-primary-dark);
+}
+
+/* Donation note */
+.donation-note {
+	padding: 1rem 1.25rem;
+	background-color: #E8EEE5;
+	border-left: 4px solid var(--color-primary);
+	border-radius: 0.25rem;
+}
+
+.donation-note p {
+	line-height: 1.6;
+}
+
+/* Company matching */
+.company-matching {
+	padding-top: 2rem;
+	border-top: 1px solid rgba(41, 41, 41, 0.1);
+}
+
+.company-matching-link {
+	display: inline-block;
+	color: var(--color-primary);
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.company-matching-link:hover {
+	color: var(--color-primary-dark);
+}
+
+.company-matching-link:focus-visible,
+.donation-card a:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 4px;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+	.donation-card {
+		padding: 1.25rem;
+	}
+
+	.donation-note {
+		padding: 1rem;
+	}
+}
+
 /*
  * Resources page
  */
@@ -636,5 +714,80 @@ h6 {
 @media (max-width: 767px) {
 	.resources-content {
 		padding: 3rem 0;
+	}
+}
+
+/* Announcement banner */
+.announcement-banner {
+	background-color: #E8EEE5;
+	border-bottom: 1px solid rgba(41, 41, 41, 0.08);
+	padding: 0.5rem 0;
+}
+
+.announcement-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.announcement-text {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	column-gap: 0.5rem;
+	row-gap: 0.125rem;
+	flex: 1;
+	min-width: 0;
+}
+
+.announcement-title {
+	margin: 0;
+	color: var(--color-primary-dark);
+	font-size: 0.875rem;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.announcement-message {
+	margin: 0;
+	color: var(--color-text);
+	font-size: 0.8125rem;
+	line-height: 1.4;
+}
+
+.announcement-link {
+	flex-shrink: 0;
+	color: var(--color-primary);
+	font-size: 0.8125rem;
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.announcement-link:hover {
+	color: var(--color-primary-dark);
+}
+
+.announcement-link:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 4px;
+	border-radius: 2px;
+}
+
+/* Announcement banner: Mobile */
+@media (max-width: 767px) {
+	.announcement-content {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.375rem;
+	}
+
+	.announcement-text {
+		display: block;
+	}
+
+	.announcement-title {
+		margin-bottom: 0.125rem;
 	}
 }
