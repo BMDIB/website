@@ -5,6 +5,7 @@
 	--color-primary: #7a263a;
 	--color-primary-dark: #5a1d2b;
 	--color-secondary: #667a68;
+	--color-secondary-dark: #465b49;
 	--color-accent: #c6a15b;
 
 	/* Surface colors */
@@ -87,19 +88,19 @@ h6 {
 .btn-secondary {
 	--bs-btn-bg: var(--color-secondary);
 	--bs-btn-border-color: var(--color-secondary);
-	--bs-btn-hover-bg: #526454;
-	--bs-btn-hover-border-color: #526454;
+	--bs-btn-hover-bg: var(--color-secondary-dark);
+	--bs-btn-hover-border-color: var(--color-secondary-dark);
 }
 
 .btn-outline-secondary {
-	--bs-btn-color: var(--color-secondary);
-	--bs-btn-border-color: var(--color-secondary);
+	--bs-btn-color: var(--color-secondary-dark);
+	--bs-btn-border-color: var(--color-secondary-dark);
 	--bs-btn-hover-color: var(--color-surface);
-	--bs-btn-hover-bg: var(--color-secondary);
-	--bs-btn-hover-border-color: var(--color-secondary);
+	--bs-btn-hover-bg: var(--color-secondary-dark);
+	--bs-btn-hover-border-color: var(--color-secondary-dark);
 	--bs-btn-active-color: var(--color-surface);
-	--bs-btn-active-bg: var(--color-secondary);
-	--bs-btn-active-border-color: var(--color-secondary);
+	--bs-btn-active-bg: var(--color-secondary-dark);
+	--bs-btn-active-border-color: var(--color-secondary-dark);
 }
 
 /*
@@ -159,7 +160,7 @@ h6 {
 
 .site-footer {
 	margin-top: 4rem;
-	background-color: var(--color-secondary);
+	background-color: var(--color-secondary-dark);
 	color: var(--color-surface);
 }
 
