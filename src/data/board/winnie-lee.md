@@ -5,4 +5,6 @@ image: "/images/board/winnie-lee.jpg"
 order: 9
 ---
 
-I'm a bit of a stereotypical geek! I love bringing structure and order to things, and I can happily spend hours building things with code. Outside of work, I enjoy baking and gardening with my little one. As a parent in the Mandarin Immersion Program, I'm passionate about supporting Mandarin language and cultural education for children and families in our community. I'm thrilled to bring both my technical experience and my heart for this mission to Mandarin Boosters.
+I’m a bit of a stereotypical geek! I love bringing structure to things and can happily spend hours coding. As BMDIB’s Webmaster, I designed and developed our website to help keep families connected and informed.
+
+Outside of coding, I enjoy baking and gardening with my little one. As a Mandarin Immersion parent, I’m excited to use my technical skills to support Mandarin language and cultural education in our community.
