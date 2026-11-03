@@ -16,7 +16,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build Astro Application
 
     steps:
       - name: Checkout repository
