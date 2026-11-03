@@ -1,68 +1,167 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
 ---
 
 <BaseLayout
 	title="Fundraising | Mandarin Boosters"
 	description="Learn why Mandarin Boosters fundraises and find the current fundraising campaign."
 >
-	<section class="fundraising-intro">
+	<PageHeader
+		eyebrow="Supporting Our Students"
+		title="Fundraising"
+		description="Support BMDIB's annual giving campaign and help enrich the Mandarin Dual Immersion experience for our students."
+	/>
+
+	<section class="fundraising-section py-5">
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<p class="section-eyebrow">Fundraising</p>
+			<div class="fundraising-content mx-auto">
 
-					<h1>Support Mandarin Boosters</h1>
-
-					<p class="lead">
-						Placeholder introduction to BMDIB fundraising. Final content will
-						be provided by the organization.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="fundraising-why">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8">
-					<h2>Why We Fundraise</h2>
+				<!-- Why We Fundraise -->
+				<section class="mb-5">
+					<h2 class="mb-4">Why We Fundraise</h2>
 
 					<p>
-						Placeholder content explaining why BMDIB fundraises and how
-						fundraising supports the Mandarin immersion community.
+						Basic school funding only covers essential costs.
+						To make our K–8 Mandarin Program truly top-tier,
+						we rely on parent support to bridge the funding gap:
 					</p>
+
+					<ul class="fundraising-benefits">
+						<li>
+							<strong>Enhancing Classrooms:</strong>
+							Funds Mandarin books, specialized teaching materials,
+							and software subscriptions across K–8.
+						</li>
+						<li>
+							<strong>Expanding Experiences:</strong>
+							Brings cultural assemblies, educational field trips,
+							and enrichment programs to our students.
+						</li>
+					</ul>
+
+					<p class="mt-4 mb-1">
+						We are a 501(c)(3) nonprofit organization
+						(Tax ID: 77-0392868).
+					</p>
+
+					<p class="small text-muted">
+						<em>
+							Your donation may be tax deductible.
+							Please consult with your tax advisor.
+						</em>
+					</p>
+				</section>
+
+				<!-- Annual Giving Campaign -->
+				<section>
+					<h2 class="mb-3">2026–27 Annual Giving Campaign</h2>
 
 					<p>
-						Final fundraising information and messaging will be provided by
-						the organization.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="fundraising-campaign">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 text-center">
-					<h2>Current Campaign</h2>
-
-					<p>
-						Placeholder description for the current BMDIB fundraising
-						campaign.
+						Your generosity helps us provide enriching educational
+						and cultural experiences for our Mandarin Dual Immersion
+						students. Every contribution makes a difference!
 					</p>
 
-					<a
-						class="btn btn-primary"
-						href="#"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						View Current Campaign
-					</a>
-				</div>
+					<div class="text-center my-4">
+						<a
+							href="https://my.cheddarup.com/c/berryessa-mandarin-dual-immersion-boosters-invest-campaign-co/items"
+							class="btn btn-primary"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Support Our Campaign
+						</a>
+					</div>
+
+					<!-- Other Ways to Donate -->
+					<div class="donation-methods mt-5">
+						<h3 class="mb-4">Other Ways to Donate</h3>
+
+						<div class="row g-4">
+							<!-- Check -->
+							<div class="col-md-6">
+								<div class="donation-card">
+									<h4>Check</h4>
+
+									<p class="mb-2">
+										Make checks payable to:
+									</p>
+
+									<p class="fw-semibold">
+										Berryessa Mandarin Dual Immersion Boosters
+									</p>
+
+									<p class="mb-0">
+										Please drop off your check at the school
+										office and email <a href="mailto:berryessamdib@gmail.com">berryessamdib@gmail.com</a> to notify us for pickup.
+									</p>
+								</div>
+							</div>
+
+							<!-- Zelle / PayPal -->
+							<div class="col-md-6">
+								<div class="donation-card">
+									<h4>Zelle / PayPal</h4>
+
+									<p>
+										Send your donation using:
+									</p>
+
+									<p class="fw-semibold mb-0">
+										<a href="mailto:berryessamdib@gmail.com">
+											berryessamdib@gmail.com
+										</a>
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Donation Note -->
+						<div class="donation-note mt-4">
+							<p class="mb-0">
+								<strong>Please note: </strong>
+								When making a donation via check or Zelle,
+								please include the student's name, grade,
+								and teacher's name.
+							</p>
+						</div>
+					</div>
+
+					<!-- Company Matching -->
+					<div class="company-matching mt-5">
+						<h3 class="mb-3">Company Matching</h3>
+
+						<p>
+							Did you know your employer may match your donation?
+							Many companies offer matching gift programs that
+							can double the impact of your contribution.
+						</p>
+
+						<p>
+							Check whether your employer offers corporate matching
+							through its HR department or corporate giving platform.
+							You can also explore matching gift information through
+							Charity Navigator.
+						</p>
+
+						<a
+							href="https://www.charitynavigator.org/"
+							class="company-matching-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Explore Company Matching →
+						</a>
+
+						<p class="small text-muted mt-3 mb-0">
+							Organization: Berryessa Mandarin Dual Immersion Boosters
+							<br />
+							Tax ID: 77-0392868
+						</p>
+					</div>
+				</section>
+
 			</div>
 		</div>
 	</section>
