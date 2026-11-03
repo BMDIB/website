@@ -33,15 +33,11 @@ jobs:
       - name: Apply production configuration
         run: cp config/azure/production.staticwebapp.config.json dist/staticwebapp.config.json
 
-      - name: Install OIDC Client
-        run: npm install --no-save @actions/core@1.6.0 @actions/http-client
-
       - name: Get GitHub ID token
         uses: actions/github-script@v6
         id: idtoken
         with:
           script: |
-            const core = require('@actions/core');
             return await core.getIDToken();
           result-encoding: string
 
