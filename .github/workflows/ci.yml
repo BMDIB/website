@@ -3,11 +3,20 @@ name: CI
 on:
   pull_request:
     branches:
+      - staging
       - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build Astro Application
 
     steps:
       - name: Checkout repository
