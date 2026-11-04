@@ -81,5 +81,5 @@ export const announcement = {
 	message:
 		"We need parent volunteers to help coordinate performances, activities and food booths.",
 	linkText: "Contact emily@bmdib.org  → ",
-	linkUrl: "mailto:emily@bmdib.org ",
+	linkUrl: "mailto:emily@bmdib.org",
 };
