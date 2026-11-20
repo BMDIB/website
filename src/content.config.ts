@@ -83,3 +83,25 @@ export const announcement = {
 	linkText: "Contact emily@bmdib.org  → ",
 	linkUrl: "mailto:emily@bmdib.org",
 };
+
+
+export const announcements = [
+    {
+        enabled: true,
+        background: "sage",
+        title: "🧧 Help Plan Our Lunar New Year Family Night on Feb 26!",
+        message:
+            "We need parent volunteers to help coordinate performances, activities and food booths.",
+        linkText: "Contact emily@bmdib.org →",
+        linkUrl: "mailto:emily@bmdib.org",
+    },
+    {
+        enabled: true,
+        background: "champagne",
+        title: "🏆 2027 ANCCS Competition Registration Is Open!",
+        message:
+            "Registration is now open for the 2027 ANCCS competition.",
+        linkText: "Register Now →",
+        linkUrl: "https://my.cheddarup.com/c/anccs-competition-registration-copy-21379/items",
+    },
+];
