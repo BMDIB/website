@@ -1,33 +1,39 @@
+
 ---
-import { announcement } from "../content.config";
+import { announcements } from "../content.config";
 ---
 
 {
-	announcement.enabled && (
-		<aside
-			class="announcement-banner"
-			aria-label="Community announcement"
-		>
-			<div class="container">
-				<div class="announcement-content">
-					<div class="announcement-text">
-						<p class="announcement-title">
-							{announcement.title}
-						</p>
+    announcements
+        .filter((item) => item.enabled)
+        .map((announcement) => (
+            <aside
+                class:list={[
+                    "announcement-banner",
+                    `announcement-banner--${announcement.background}`,
+                ]}
+                aria-label="Community announcement"
+            >
+                <div class="container">
+                    <div class="announcement-content">
+                        <div class="announcement-text">
+                            <p class="announcement-title">
+                                {announcement.title}
+                            </p>
 
-						<p class="announcement-message">
-							{announcement.message}
-						</p>
-					</div>
+                            <p class="announcement-message">
+                                {announcement.message}
+                            </p>
+                        </div>
 
-					<a
-						class="announcement-link"
-						href={announcement.linkUrl}
-					>
-						{announcement.linkText}
-					</a>
-				</div>
-			</div>
-		</aside>
-	)
+                        <a
+                            class="announcement-link"
+                            href={announcement.linkUrl}
+                        >
+                            {announcement.linkText}
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        ))
 }

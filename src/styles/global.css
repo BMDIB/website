@@ -818,77 +818,85 @@ h6 {
 	}
 }
 
+
 /* Announcement banner */
 .announcement-banner {
-	background-color: #E8EEE5;
-	border-bottom: 1px solid rgba(41, 41, 41, 0.08);
-	padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(41, 41, 41, 0.08);
+    padding: 0.5rem 0;
+}
+
+.announcement-banner--sage {
+    background-color: #E8EEE5;
+}
+
+.announcement-banner--champagne {
+    background-color: #F5EEDC;
 }
 
 .announcement-content {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 .announcement-text {
-	display: flex;
-	align-items: baseline;
-	flex-wrap: wrap;
-	column-gap: 0.5rem;
-	row-gap: 0.125rem;
-	flex: 1;
-	min-width: 0;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+    row-gap: 0.125rem;
+    flex: 1;
+    min-width: 0;
 }
 
 .announcement-title {
-	margin: 0;
-	color: var(--color-primary-dark);
-	font-size: 0.875rem;
-	font-weight: 700;
-	line-height: 1.4;
+    margin: 0;
+    color: var(--color-primary-dark);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
 .announcement-message {
-	margin: 0;
-	color: var(--color-text);
-	font-size: 0.8125rem;
-	line-height: 1.4;
+    margin: 0;
+    color: var(--color-text);
+    font-size: 0.8125rem;
+    line-height: 1.4;
 }
 
 .announcement-link {
-	flex-shrink: 0;
-	color: var(--color-primary);
-	font-size: 0.8125rem;
-	font-weight: 700;
-	text-decoration: underline;
-	text-underline-offset: 3px;
+    flex-shrink: 0;
+    color: var(--color-primary);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .announcement-link:hover {
-	color: var(--color-primary-dark);
+    color: var(--color-primary-dark);
 }
 
 .announcement-link:focus-visible {
-	outline: 2px solid var(--color-primary);
-	outline-offset: 4px;
-	border-radius: 2px;
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+    border-radius: 2px;
 }
 
 /* Announcement banner: Mobile */
 @media (max-width: 767px) {
-	.announcement-content {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 0.375rem;
-	}
+    .announcement-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.375rem;
+    }
 
-	.announcement-text {
-		display: block;
-	}
+    .announcement-text {
+        display: block;
+    }
 
-	.announcement-title {
-		margin-bottom: 0.125rem;
-	}
+    .announcement-title {
+        margin-bottom: 0.125rem;
+    }
 }
