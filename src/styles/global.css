@@ -479,6 +479,83 @@ h6 {
  * Competitions page
  */
 
+/* 2027 ANCCS Competition Section start */
+
+.anccs-section {
+  padding: 3rem 0;
+  background-color: var(--color-surface);
+}
+
+.anccs-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.anccs-title {
+  margin: 0;
+  color: var(--color-burgundy, #6b1f35);
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.anccs-poster-wrapper {
+  width: 100%;
+  max-width: 720px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.anccs-poster {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.anccs-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.anccs-register-button {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+}
+
+.anccs-note {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 575.98px) {
+  .anccs-section {
+    padding: 2rem 0;
+  }
+
+  .anccs-title {
+    font-size: 1.65rem;
+  }
+
+  .anccs-poster-wrapper {
+    max-width: 100%;
+  }
+
+  .anccs-register-button {
+    width: 100%;
+  }
+
+  .anccs-registration {
+    width: 100%;
+  }
+}
+/* 2027 ANCCS Competition Section end */
 .competition-section {
 	background-color: var(--color-surface);
 }
